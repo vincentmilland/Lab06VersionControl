@@ -1,3 +1,4 @@
+# This is Vincent Milland's file
 def encode(password):
     # Ensuring the password is 8-digit and only contains integers
     if not (password.isdigit() and len(password) == 8):
