@@ -10,6 +10,15 @@ def encode(password):
     return encoded_password
 
 
+def decode(password):
+    length = len(password)
+    i = 0
+    afterdecoding = ""
+    while i < length:
+        afterdecoding = afterdecoding + str((int(password[i]) - 3) % 10)
+        i = i + 1
+    return afterdecoding
+
 def main():
     encoded_password = None
     original_password = None
@@ -29,7 +38,9 @@ def main():
             if encoded_password:
                 print("Your password has been encoded and stored!")
         elif option == '2':
-            pass
+            original_password = decode(encoded_password)
+            print("The encoded password is " + encoded_password + ", and the original password is "
+                  + original_password + ".")
         elif option == '3':
             break  # Exiting the loop to quit the program
         else:
